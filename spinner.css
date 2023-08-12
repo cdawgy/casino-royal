@@ -1,32 +1,48 @@
 .spinner-back-panel {
-    background-color: red;
-    height: 700px;
-    width: 700px;
-    border-radius: 50%;
-    margin: auto;
-    position: relative;
+  background-color: green;
+  height: 700px;
+  width: 700px;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
 }
 
 .spinner-back-panel::before {
+  content: "";
+  height: 2px;
+  width: 700px;
+  background-color: black;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+}
+
+.spinner-back-panel::after {
     content: "";
-    height: 2px;
-    width: 700px;
+    height: 64px;
+    width: 64px;
     background-color: black;
+    border-radius: 50%;
     display: block;
     position: absolute;
     top: 50%;
-    left: 0;
-    margin-top: -1px;
-}
+    left: 50%;
+    margin: -32px 0 0 -32px;
+  }
 
 .spinner-arrow {
-    width: 250px;
-    height: 40px;
-    background-color: blue;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -20px;
-    transition: 3s ease-out;
-    transform-origin: left CENTER;
+  width: 256px;
+  height: 256px;
+  background-image: url("./arrow.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -128px;
+  transition: 3s ease-out;
+  transform-origin: left CENTER;
 }
