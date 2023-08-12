@@ -9,15 +9,14 @@
 
 .spinner-back-panel::before {
     content: "";
-    height: 32px;
-    width: 32px;
-    background-color: green;
+    height: 2px;
+    width: 700px;
+    background-color: black;
     display: block;
-    border-radius: 50%;
     position: absolute;
     top: 50%;
-    left: 50%;
-    margin: -16px 0 0 -16px;
+    left: 0;
+    margin-top: -1px;
 }
 
 .spinner-arrow {

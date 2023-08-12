@@ -10,6 +10,8 @@ renderMoney();
 
 spinButton.onclick = (e) => {
   checkSufficientFunds();
+  checkEnteredValue();
+  spinButton.disabled = true;
   currentMoney = currentMoney - bet.value;
   renderMoney();
   const cssRotate = arrow.style.transform;
@@ -19,12 +21,23 @@ spinButton.onclick = (e) => {
 
   setNewAngle(arrow, newAngle);
   const isHigh = isAngleHigh(newAngle);
-  determineBetOutcome(isHigh);
+  setTimeout(() => {
+    determineBetOutcome(isHigh);
+  }, 3000);
 };
 
 function checkSufficientFunds() {
   if (bet.value > currentMoney) {
     throw Error("Insufficient Funds!");
+  }
+}
+
+function checkEnteredValue() {
+  const isValid = /^[0-9]+$/.test(bet.value);
+
+  if (!isValid) {
+    alert("Invalid Input!");
+    throw Error("Invalid input!");
   }
 }
 
@@ -68,16 +81,18 @@ function determineBetOutcome(isSpinnerHigh) {
   } else {
     handleLose();
   }
+  spinButton.disabled = false;
 }
 
 function handleWin() {
-    const winnings = bet.value * 2;
-    currentMoney = currentMoney + winnings;
-    renderMoney();
+  const winnings = bet.value * 2;
+  currentMoney = currentMoney + winnings;
+  renderMoney();
+  alert("You won!");
 }
 
 function handleLose() {
-    // alert loser of lose
+  alert("You lost!");
 }
 
 function renderMoney() {
