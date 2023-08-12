@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spinner</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./spinner.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Current Currency -->
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4"><p id="money">Money: 0</p></div>
+      </div>
+      <!-- Spinner -->
+      <div class="row">
+        <div class="spinner-back-panel">
+          <div class="spinner-arrow" id="arrow"></div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <div class="row">
+        <div class="col-12">
+          <input
+            type="radio"
+            class="btn-check"
+            name="options-base"
+            id="hi"
+            autocomplete="off"
+          />
+          <label class="btn" for="hi">Hi</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="options-base"
+            id="lo"
+            autocomplete="off"
+          />
+          <label class="btn" for="lo">Lo</label>
+          
+          <div class="input-group flex-nowrap mt-3">
+            <span class="input-group-text" id="addon-wrapping">Betting Amount</span>
+            <input id="bet" type="text" class="form-control" placeholder="Enter amount" aria-label="Betting" aria-describedby="addon-wrapping">
+          </div>
+
+          <button id="spin" type="button" class="btn btn-primary">Spin!</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript" src="./spinner.js"></script>
+</html>

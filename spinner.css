@@ -1,0 +1,33 @@
+.spinner-back-panel {
+    background-color: red;
+    height: 700px;
+    width: 700px;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+}
+
+.spinner-back-panel::before {
+    content: "";
+    height: 32px;
+    width: 32px;
+    background-color: green;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -16px 0 0 -16px;
+}
+
+.spinner-arrow {
+    width: 250px;
+    height: 40px;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    transition: 3s ease-out;
+    transform-origin: left CENTER;
+}
