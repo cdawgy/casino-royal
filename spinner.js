@@ -10,8 +10,9 @@ renderMoney();
 
 spinButton.onclick = (e) => {
   checkSufficientFunds();
+  checkBettingOptions();
   checkEnteredValue();
-  spinButton.disabled = true;
+  setButtonDisabled(true);
   currentMoney = currentMoney - bet.value;
   renderMoney();
   const cssRotate = arrow.style.transform;
@@ -38,6 +39,13 @@ function checkEnteredValue() {
   if (!isValid) {
     alert("Invalid Input!");
     throw Error("Invalid input!");
+  }
+}
+
+function checkBettingOptions() {
+  if (!hi.checked && !lo.checked) {
+    alert("Please check a betting option");
+    throw Error("No Option Selected!");
   }
 }
 
@@ -81,7 +89,7 @@ function determineBetOutcome(isSpinnerHigh) {
   } else {
     handleLose();
   }
-  spinButton.disabled = false;
+  setButtonDisabled(false);
 }
 
 function handleWin() {
@@ -97,4 +105,14 @@ function handleLose() {
 
 function renderMoney() {
   money.innerHTML = `Money: ${currentMoney}`;
+}
+
+function setButtonDisabled(isDisabled) {
+  if (isDisabled) {
+    spinButton.disabled = true;
+    spinButton.innerHTML = "Spinning...";
+  } else {
+    spinButton.disabled = false;
+    spinButton.innerHTML = "Spin!";
+  }
 }
